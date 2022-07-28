@@ -13,11 +13,14 @@ jobs:
     - name: Get Resources
       uses: actions/checkout@v3
       with:
-        name: uiset-com/resources
+        repository: uiset-com/resources
         path: resources
   
     - name: Copy Assets To Public
       run: rsync -r --exclude '*/**/*.json' ./resources ./public/
+    
+    - name: install npm
+      run: npm install
     
     - name: Generate
       run: npm run generate
