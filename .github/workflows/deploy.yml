@@ -16,10 +16,6 @@ jobs:
         repository: uiset-com/resources
         path: resources
     
-    - run: pwd
-    - run: ls
-    - run: ls ./resources
-  
     - name: Copy Assets To Public
       run: rsync -r --exclude '*/**/*.json' --exclude '.git' ./resources ./public/
     
