@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Lucide",
+        "category": {
+            "name": "图标",
+            "value": "icon"
+        },
+        "summary": "好看的SVG图标",
+        "thumbnail": "https://freeillustrations.xyz/wp-content/uploads/elementor/thumbs/3D-Christmas-icons@4x-p4dbwlphjnz5ztu1zcnpixblbpyr7wermaq98hpv8e.png",
+        "logo": "图标 需要放置在icons目录下，支持 svg（推荐）和图片格式",
+        "website": "https://lucide.dev/",
+        "github": "https://github.com/lucide-icons/lucide",
+        "tags": "标签，多个标签用英文逗号隔开",
+        "isFree": "是否免费"
+    },
+    {
+        "name": "tinypng",
+        "category": {
+            "name": "图形处理",
+            "value": "process"
+        },
+        "summary": "一款高效的图片压缩工具，支持WebP, PNG 和 JPEG",
+        "website": "https://www.tinypng.com",
+        "thumbnail": "https://freeillustrations.xyz/wp-content/uploads/elementor/thumbs/3D-Christmas-icons@4x-p4dbwlphjnz5ztu1zcnpixblbpyr7wermaq98hpv8e.png"
+    },
+    {
+        "name": "tinypng2",
+        "category": {
+            "name": "图形处理",
+            "value": "process"
+        },
+        "summary": "一款高效的图片压缩工具",
+        "website": "https://www.tinypng.com",
+        "thumbnail": "https://freeillustrations.xyz/wp-content/uploads/elementor/thumbs/3D-Christmas-icons@4x-p4dbwlphjnz5ztu1zcnpixblbpyr7wermaq98hpv8e.png"
+    },
+    {
+        "name": "tinypng3",
+        "category": {
+            "name": "图形处理",
+            "value": "process"
+        },
+        "summary": "一款高效的图片压缩工具",
+        "website": "https://www.tinypng.com",
+        "thumbnail": "https://freeillustrations.xyz/wp-content/uploads/elementor/thumbs/Whoosh-illustrations@4x-p4db9u2804t4ruwmxid14o5nbq6oru0ttluur7h5y6.png"
+    },
+    {
+        "name": "tinypng4",
+        "category": {
+            "name": "图形处理",
+            "value": "process"
+        },
+        "summary": "一款高效的图片压缩工具",
+        "website": "https://www.tinypng.com",
+        "thumbnail": "https://freeillustrations.xyz/wp-content/uploads/elementor/thumbs/3D-Christmas-icons@4x-p4dbwlphjnz5ztu1zcnpixblbpyr7wermaq98hpv8e.png"
+    }
+]
