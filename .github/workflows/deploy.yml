@@ -10,13 +10,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    -name: Get Resources
+    - name: Get Resources
       uses: actions/checkout@v3
       with:
         name: uiset-com/resources
         path: resources
   
-    -name: Copy Assets To Public
+    - name: Copy Assets To Public
       run: rsync -r --exclude '*/**/*.json' ./resources ./public/
     
     - name: Generate
