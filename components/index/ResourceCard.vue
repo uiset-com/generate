@@ -2,7 +2,7 @@
     <div class="pa-2 resouce-item mr-3 mb-3" :class="'placehold-' + !resource.name">
         <template v-if="resource.name">
             <a :href="resource.website" target="blank">
-                <v-img :src="resource.thumbnail" height="150" cover></v-img>
+                <v-img :src="`/resources/categorys/${resource.category}/${resource.value}/thumbnail.png`" height="150" cover></v-img>
             </a>
             <div class="mt-1">
                 <div class="font-weight-bold">{{ resource.name }}</div>

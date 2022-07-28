@@ -8,11 +8,11 @@
     </div>
 </template>
 <script>
-import IconData from '../../data/resources/icon.json';
-import Illustration from '../../data/resources/illustration.json';
 import Icon from '../common/Icon.vue';
 import HomeList from './HomeList.vue';
 import ResourceCard from './ResourceCard.vue';
+const modules = import.meta.globEager(`../../resources/categorys/**/meta.json`);
+
 export default {
     components: {
         Icon,
@@ -31,15 +31,21 @@ export default {
     },
     computed: {
         resources() {
-            const datas = {
-                icon: IconData,
-                illustration: Illustration
-            };
-            let items = datas[this.category];
-            // 否则显示最新视图
-            if (!items) {
-                items = [];
-            };
+            let items = [];
+             for(const path in modules) {
+                const content = modules[path].default;
+                const pathArr = path.split('/');
+                pathArr.pop();
+                const value = pathArr.pop();
+                const category = pathArr.pop();
+                if (category === this.category) {
+                    items.push({
+                        ...content,
+                        category,
+                        value
+                    });
+                }
+             }
             const fillup = 4 - (items.length % 4 || 4);
             if (fillup > 0) {
                 items = [
