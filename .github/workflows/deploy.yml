@@ -21,7 +21,7 @@ jobs:
     - run: ls ./resources
   
     - name: Copy Assets To Public
-      run: rsync -r --exclude '*/**/*.json' ./resources ./public/
+      run: rsync -r --exclude '*/**/*.json' --exclude '.git' ./resources ./public/
     
     - name: Install npm
       run: npm install
