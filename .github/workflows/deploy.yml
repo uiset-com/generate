@@ -18,6 +18,7 @@ jobs:
     
     - run: pwd
     - run: ls
+    - run: ls ./resources
   
     - name: Copy Assets To Public
       run: rsync -r --exclude '*/**/*.json' ./resources ./public/
