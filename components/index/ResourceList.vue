@@ -2,8 +2,12 @@
     <div>
         <!-- 搜索 -->
         <HomeList v-if="!category"></HomeList>
-        <div v-else class="d-flex flex-wrap justify-space-between mt-8">
-            <ResourceCard v-for="item in resources" :key="item.value" :resource="item"></ResourceCard>
+
+        <div v-else class="mt-8">
+            <!-- <ListBar></ListBar> -->
+            <div class="d-flex flex-wrap justify-space-between mt-5">
+                <ResourceCard v-for="item in resources" :key="item.value" :resource="item"></ResourceCard>
+            </div>
         </div>
     </div>
 </template>
@@ -11,13 +15,15 @@
 import Icon from '../common/Icon.vue';
 import HomeList from './HomeList.vue';
 import ResourceCard from './ResourceCard.vue';
+import ListBar from './ListBar.vue';
 const modules = import.meta.globEager(`../../resources/categorys/**/meta.json`);
 
 export default {
     components: {
         Icon,
         HomeList,
-        ResourceCard
+        ResourceCard,
+        ListBar
     },
     props: {
         category: {

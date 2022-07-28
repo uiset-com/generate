@@ -1,10 +1,17 @@
 <template>
-    <v-card class="py-5">
-        <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category === item.value)" class="px-3 pr-6 py-2 d-flex align-center text-body-2 text-decoration-none">
-            <Icon :name="item.icon"></Icon>
-            <span class="ml-4 category-name">{{ item.name }}</span>
-        </NuxtLink>
-    </v-card>
+    <div class="left-bar">
+        <div class="left-inner py-5 d-flex flex-column">
+            <div class="category-menu flex-grow-1" style="overflow-y: auto;">
+                <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category === item.value)" class="px-5 pr-8 py-2 d-flex align-center text-body-2 text-decoration-none">
+                    <Icon :name="item.icon"></Icon>
+                    <span class="ml-4 category-name">{{ item.name }}</span>
+                </NuxtLink>
+            </div>
+            <div class="d-flex flex-column align-center mt-2">
+                <v-btn flat depressed href="https://github.com/uiset-com/resources" target="_blank">提交资源</v-btn>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -28,7 +35,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.left-bar{
+    height: 100vh;
+    padding: 30px 0;
+}
+.left-inner {
+    background: rgba(0, 0, 0, 0.025);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+.category-menu  {
+}
 .category-item {
     color: #777;
     .category-name {

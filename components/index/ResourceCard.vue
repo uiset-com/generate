@@ -8,9 +8,11 @@
                 <div class="font-weight-bold">{{ resource.name }}</div>
                 <div class="text-caption">{{ resource.summary }}</div>
             </div>
-            <div class="mt-1">
-                <!-- <v-chip v-if="item.github" small :href="item.github" target="_blank">GitHub</v-chip> -->
+            <div class="mt-1 d-flex align-center">
                 <Icon name="Github" color="#888"></Icon>
+                <v-spacer></v-spacer>
+                <div>
+                </div>
             </div>
         </template>
     </div>

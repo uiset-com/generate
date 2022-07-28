@@ -1,6 +1,6 @@
 <template>
-    <div class="d-flex" style="max-width: 1100px; margin: 0 auto">
-        <div class="flex-shrink-0 mt-8">
+    <div class="d-flex" style="max-width: 1100px; width: 100%; margin: 0 auto">
+        <div class="flex-shrink-0">
             <CategoryMenu :category="category"></CategoryMenu>
         </div>
         <div class="flex-grow-1 ml-7">
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import resources from '../../data/resouces.json';
 import categorys from '../../data/category.json';
 import CategoryMenu from '../../components/index/CategroyMenu.vue';
 import ResourceList from '../../components/index/ResourceList.vue';
@@ -22,7 +21,6 @@ export default {
     },
     data() {
         return {
-            resources,
             categorys
         }
     },
