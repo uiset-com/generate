@@ -1,15 +1,14 @@
 <template>
-<div style="height: 100vh" class="d-flex flex-column align-center justify-center">
+<div class="d-flex flex-column align-center justify-center">
+    <div class="text-center py-5">
+        <h1 class="font-weight-bolder">UISET</h1>
+        <p>发现免费优质的UI资源集合</p>
+    </div>
     <div class="py-5 d-flex justify-center">
         <div class="search-box d-flex align-center">
             <Icon name="Search" color="#666" class="search-icon"></Icon>
-            <input type="text" placeholder="检索资源" class="search-field px-2" />
+            <input type="text" placeholder="检索图标/插图/图案/颜色...." class="search-field px-2" />
         </div>
-    </div>
-
-    <div class="mt-8 text-body-2">最新收录</div>
-    <div class="d-flex flex-wrap justify-space-between mt-3">
-        <ResourceCard v-for="item in latests" :key="item.value" :resource="item"></ResourceCard>
     </div>
 </div>
 </template>

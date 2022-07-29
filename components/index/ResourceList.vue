@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 搜索 -->
-        <!-- <HomeList v-if="!category"></HomeList> -->
+        <HomeList v-if="!category"></HomeList>
         <div style="height: 100vh" class="d-flex flex-column py-8">
             <div class="flex-grow-1 pr-3" style="overflow-y: auto; height: 0;">
                 <!-- <ListBar></ListBar> -->
