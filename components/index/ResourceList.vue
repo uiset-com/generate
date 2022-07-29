@@ -52,7 +52,7 @@ export default {
                     });
                 }
              }
-            const fillup = 4 - (items.length % 4 || 4);
+            const fillup = 3 - (items.length % 3 || 3);
             if (fillup > 0) {
                 items = [
                     ...items,

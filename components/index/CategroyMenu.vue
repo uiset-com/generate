@@ -44,6 +44,7 @@ export default {
     background: rgba(0, 0, 0, 0.025);
     border: 1px solid rgba(0, 0, 0, 0.03);
     height: 100%;
+    width: 170px;
 }
 .category-menu  {
 }
