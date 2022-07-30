@@ -27,6 +27,9 @@ jobs:
     
     - name: Install npm
       run: npm install
+
+    - name: Algolia Push
+      run: npm run algolia:push
     
     - name: Generate
       run: npm run generate
