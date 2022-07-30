@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex py-4 align-center">
+    <div class="d-flex py-4 align-center pr-2">
         <template v-if="searchMode">
             <span>共找到</span>
             <span class="font-weight-bold mx-1">{{ total }}</span>

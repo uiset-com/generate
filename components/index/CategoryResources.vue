@@ -1,5 +1,5 @@
 <template>
-    <div style="height: 100vh" class="py-8">
+    <div style="height: 100vh" class="py-8 pt-2">
         <ResourceList :resources="resources" :total="total" :category="category"></ResourceList>
     </div>
 </template>

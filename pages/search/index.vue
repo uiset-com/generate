@@ -4,8 +4,8 @@
             <CategoryMenu></CategoryMenu>
         </div>
         <div class="flex-grow-1 ml-7">
-            <div style="height: 100vh" class="d-flex flex-column py-8">
-                <ResourceList :resources="results" search-mode></ResourceList>
+            <div style="height: 100vh" class="d-flex flex-column py-8 pt-3">
+                <ResourceList :resources="results" search-mode :total="total"></ResourceList>
             </div>
         </div>
     </div>
@@ -22,7 +22,8 @@ export default {
     },
     data() {
         return {
-            results: []
+            results: [],
+            total: 0
         }
     },
     computed: {
@@ -41,16 +42,17 @@ export default {
     methods: {
         async search() {
             if (!this.keywords || !this.keywords.trim()) return;
-            let datas = await searchFromAlgolia(this.keywords.trim());
+            let { hits, nbHits } = await searchFromAlgolia(this.keywords.trim());
             // 补全 3
-            const fillup = 3 - (datas.length % 3 || 3);
+            const fillup = 3 - (hits.length % 3 || 3);
             if (fillup > 0) {
-                datas = [
-                    ...datas,
+                hits = [
+                    ...hits,
                     ...new Array(fillup).fill({})
                 ];
             }
-            this.results = datas;
+            this.results = hits;
+            this.total = nbHits;
         }
     }
 }
