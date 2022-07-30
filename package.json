@@ -4,7 +4,8 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "algolia:push": "node task/algolia.js"
   },
   "devDependencies": {
     "@mdi/js": "^7.0.96",
@@ -12,6 +13,7 @@
     "nuxt": "3.0.0-rc.6"
   },
   "dependencies": {
+    "algoliasearch": "^4.14.2",
     "lucide-vue-next": "^0.83.0",
     "sass": "^1.54.0",
     "vuetify": "^3.0.0-beta.5"

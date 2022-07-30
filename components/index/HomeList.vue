@@ -7,7 +7,7 @@
     <div class="py-5 d-flex justify-center">
         <div class="search-box d-flex align-center">
             <Icon name="Search" color="#666" class="search-icon"></Icon>
-            <input type="text" placeholder="检索图标/插图/图案/颜色...." class="search-field px-2" />
+            <input type="text" v-model="keywords" placeholder="检索图标/插图/图案/颜色...." class="search-field px-2" @keyup.enter="search" />
         </div>
     </div>
 </div>
@@ -24,7 +24,13 @@ export default {
     },
     data() {
         return {
-            latests: LatestData
+            latests: LatestData,
+            keywords: ''
+        }
+    },
+    methods: {
+        async search() {
+            this.$router.push(`/search?keywords=${this.keywords}`);
         }
     }
 }

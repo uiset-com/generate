@@ -20,7 +20,7 @@
 
 <script>
 import Icon from '../common/Icon.vue';
- import { mdiGithub } from '@mdi/js'
+import { mdiGithub } from '@mdi/js'
 export default {
     components: {
         Icon

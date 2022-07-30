@@ -4,8 +4,7 @@
             <CategoryMenu :category="category"></CategoryMenu>
         </div>
         <div class="flex-grow-1 ml-7">
-            <!-- 统计 -->
-            <ResourceList :category="category"></ResourceList>
+            <CategoryResources :category="category"></CategoryResources>
         </div>
     </div>
 </template>
@@ -13,11 +12,11 @@
 <script>
 import categorys from '../../data/category.json';
 import CategoryMenu from '../../components/index/CategroyMenu.vue';
-import ResourceList from '../../components/index/ResourceList.vue';
+import CategoryResources from '~~/components/index/CategoryResources.vue';
 export default {
     components: {
         CategoryMenu,
-        ResourceList
+        CategoryResources
     },
     data() {
         return {
@@ -26,8 +25,7 @@ export default {
     },
     computed: {
         category() {
-            const active = categorys.find(item => item.value === this.$route.params.type);
-            return active ? active.value : null;
+            return categorys.find(item => item.value === this.$route.params.type) || categorys[0];
         }
     }
 }

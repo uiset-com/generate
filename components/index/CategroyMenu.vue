@@ -2,7 +2,7 @@
     <div class="left-bar">
         <div class="left-inner py-5 d-flex flex-column">
             <div class="category-menu flex-grow-1" style="overflow-y: auto;">
-                <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category === item.value)" class="px-5 pr-8 py-2 d-flex align-center text-body-2 text-decoration-none">
+                <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category?.value === item.value)" class="px-5 pr-8 py-2 d-flex align-center text-body-2 text-decoration-none">
                     <Icon :name="item.icon"></Icon>
                     <span class="ml-4 category-name">{{ item.name }}</span>
                 </NuxtLink>
@@ -23,8 +23,8 @@ export default {
     },
     props: {
         category: {
-            type: String,
-            default: ''
+            type: Object,
+            default: null
         }
     },
     data() {

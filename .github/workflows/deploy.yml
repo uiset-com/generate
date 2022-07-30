@@ -4,6 +4,10 @@ on:
     branches:
       - master
   workflow_dispatch:
+env:
+  ALGOLIA_PUSHKEY: ${{ secrets.ALGOLIA_PUSHKEY }}
+  ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
+  ALGOLIA_QUERYKEY: ${{ secrets.ALGOLIA_QUERYKEY }}
 
 jobs:
   build-and-deploy:
