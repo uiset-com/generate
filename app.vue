@@ -1,13 +1,22 @@
 <template>
   <v-app>
-      <!-- <v-app-bar>
-            <v-app-bar-title class="font-weight-bold body-1">
-                UISet
-            </v-app-bar-title>
-      </v-app-bar> -->
       <NuxtPage />
   </v-app>
 </template>
+
+<script setup>
+useHead({
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} - UI集` : 'UI集 - 优质免费的UI资源仓库';
+    },
+    viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+    charset: 'utf-8',
+    meta: [
+        { name: 'description', content: '收集免费优质的插画,图标,颜色等UI资源集合' },
+        { name: 'keywords', content: 'UI,插画,图标,颜色,图案,头像,占位图,mockup'}
+    ]
+})
+</script>
 
 <style lang="scss">
 html {
