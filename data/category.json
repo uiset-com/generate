@@ -25,11 +25,6 @@
         "icon": "User"
     },
     {
-        "name": "占位图",
-        "value": "placeholder",
-        "icon": "Dice1"
-    },
-    {
         "name": "图形处理",
         "value": "process",
         "icon": "Crop"
@@ -38,10 +33,5 @@
         "name": "截图美化",
         "value": "beatify",
         "icon": "PartyPopper"
-    },
-    {
-        "name": "Mockup",
-        "value": "mockup",
-        "icon": "Tablet"
     }
 ]
