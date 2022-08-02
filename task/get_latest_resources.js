@@ -21,13 +21,11 @@ const getLatestResources = async () => {
             break;
         }
     }
-    console.log('===', latests)
     const latestJSON = [];
     for (let item of latests) {
         const file = fs.readFileSync(path.resolve(__dirname, '../resources', item, 'meta.json'), 'utf8');
         latestJSON.push(JSON.parse(file));
     }
-    console.log('++', latestJSON)
     fs.writeFileSync(path.resolve(__dirname, '../data/resources', 'latests.json'), JSON.stringify(latestJSON, null, 4));
 }
 
