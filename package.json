@@ -5,13 +5,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "algolia:push": "node task/algolia.js"
+    "algolia:push": "node task/algolia.js",
+    "latest:resources": "node task/get_latest_resources"
   },
   "devDependencies": {
     "@mdi/js": "^7.0.96",
     "@nuxt/content": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.5",
-    "nuxt": "3.0.0-rc.6"
+    "nuxt": "3.0.0-rc.6",
+    "octokit": "^2.0.4"
   },
   "dependencies": {
     "algoliasearch": "^4.14.2",
