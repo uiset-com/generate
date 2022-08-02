@@ -26,7 +26,7 @@ const getLatestResources = async () => {
         const file = fs.readFileSync(path.resolve(__dirname, '../resources/categorys', item, 'meta.json'), 'utf8');
         latestJSON.push(JSON.parse(file));
     }
-    fs.writeFileSync(path.resolve(__dirname, '../data/resources', 'latests.json'), JSON.stringify(latestJSON, null, 4));
+    fs.writeFileSync(path.resolve(__dirname, '../data', 'latests.json'), JSON.stringify(latestJSON, null, 4));
 }
 
 const getCommit = async (octokit, commit, latests) => {

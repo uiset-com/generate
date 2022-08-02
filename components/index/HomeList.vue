@@ -16,7 +16,7 @@
 <script>
 import Icon from '../common/Icon.vue';
 import ResourceCard from './ResourceCard.vue';
-import LatestData from '../../data/resources/latests.json';
+import LatestData from '../../data/latests.json';
 export default {
     components: {
         Icon,
