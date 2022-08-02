@@ -24,7 +24,12 @@ const getLatestResources = async () => {
     const latestJSON = [];
     for (let item of latests) {
         const file = fs.readFileSync(path.resolve(__dirname, '../resources/categorys', item, 'meta.json'), 'utf8');
-        latestJSON.push(JSON.parse(file));
+        const [category, resource] = item.split('/');
+        latestJSON.push({
+            ...JSON.parse(file),
+            category,
+            value: resource
+        });
     }
     fs.writeFileSync(path.resolve(__dirname, '../data', 'latests.json'), JSON.stringify(latestJSON, null, 4));
 }
