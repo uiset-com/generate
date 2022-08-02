@@ -31,9 +31,6 @@ jobs:
 
     - name: Algolia Push
       run: npm run algolia:push
-    
-    - name: TestLog
-      run: pwd && ls resources/color
 
     - name: Get Latest Resources
       run: npm run latest:resources
