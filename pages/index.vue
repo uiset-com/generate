@@ -17,7 +17,7 @@
 import CategoryMenu from '../components/index/CategroyMenu.vue';
 import HomeList from '../components/index/HomeList.vue';
 import ResourceList from '~~/components/index/ResourceList.vue';
-import LastestResources from '../resources/latests.json';
+import LastestResources from '../data/latests.json';
 export default {
     components: {
         CategoryMenu,
