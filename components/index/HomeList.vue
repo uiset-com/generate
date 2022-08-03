@@ -13,7 +13,7 @@
     <div class="d-flex align-center">
         <div>共收录<span class="font-weight-bold mx-1">42</span>个优质免费UI资源</div>
         <v-spacer></v-spacer>
-        <v-btn depressed flat to="https://github.com/uiset-com/uiset" target="_blank">
+        <v-btn depressed flat href="https://github.com/uiset-com/uiset" target="_blank">
             <v-icon :icon="mdiSourceMerge"></v-icon>提交资源</v-btn>
     </div>
 </div>
