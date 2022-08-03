@@ -1,15 +1,15 @@
 <template>
     <div class="left-bar">
-        <div class="d-flex align-center">
+        <router-link to="/" class="d-flex align-center text-decoration-none logo-link" style="color: #000">
             <Logo size="34px"></Logo>
             <div class="d-flex flex-column ml-2">
                 <div>
-                    <span style="font-size: 16px; letter-spacing: 1px; font-family: Righteous;">iset</span>
+                    <span class="site-name" style="font-size: 16px; letter-spacing: 1px; font-family: Righteous;">iset</span>
                     <span class="text-caption">.com</span>
                 </div>
-                <div class="text-caption">免费优质UI资源库</div>
+                <div class="text-caption site-slogan">免费优质UI资源库</div>
             </div>
-        </div>
+        </router-link>
         <div class="left-inner py-5 d-flex flex-column mt-3">
             <div class="category-menu flex-grow-1" style="overflow-y: auto;">
                 <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category?.value === item.value)" class="px-5 pr-8 py-2 d-flex align-center text-body-2 text-decoration-none">
@@ -75,4 +75,20 @@ export default {
         }
     }
 }
+
+.logo-link .site-name {
+    transition: all .3s;
+    position: relative;
+}
+.logo-link:hover .site-name {
+    color: #a50096;
+}
+
+// .site-slogan {
+//     transition: all .3s;
+// }
+
+// .logo-link:hover .site-slogan {
+//     color: #ca7f00;
+// }
 </style>

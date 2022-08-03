@@ -46,7 +46,7 @@ jobs:
       with:
         source-directory: .output/public
         destination-github-username: 'uiset-com'
-        destination-repository-name: 'uiset'
+        destination-repository-name: 'website'
         user-email: 1246996371@qq.com
         commit-message: See ORIGIN_COMMIT from $GITHUB_REF
         target-branch: master
