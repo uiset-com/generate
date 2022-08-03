@@ -1,6 +1,16 @@
 <template>
     <div class="left-bar">
-        <div class="left-inner py-5 d-flex flex-column">
+        <div class="d-flex align-center">
+            <Logo size="34px"></Logo>
+            <div class="d-flex flex-column ml-2">
+                <div>
+                    <span style="font-size: 16px; letter-spacing: 1px; font-family: Righteous;">iset</span>
+                    <span class="text-caption">.com</span>
+                </div>
+                <div class="text-caption">免费优质UI资源库</div>
+            </div>
+        </div>
+        <div class="left-inner py-5 d-flex flex-column mt-3">
             <div class="category-menu flex-grow-1" style="overflow-y: auto;">
                 <NuxtLink v-for="item in categorys" :key="item.value" :to="'/category/' + item.value" :class="'category-item active-' + (category?.value === item.value)" class="px-5 pr-8 py-2 d-flex align-center text-body-2 text-decoration-none">
                     <Icon :name="item.icon"></Icon>
@@ -17,9 +27,11 @@
 <script>
 import categorys from '../../data/category.json';
 import Icon from '../common/Icon.vue';
+import Logo from '../common/Logo.vue';
 export default {
     components: {
-        Icon
+        Icon,
+        Logo
     },
     props: {
         category: {

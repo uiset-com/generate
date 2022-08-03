@@ -36,4 +36,8 @@ div, .d-block, textarea {
         height: 6px;
     }
 }
+@font-face {
+    font-family: Righteous;
+    src: url('./assets/font/Bungee-Regular.ttf');
+}
 </style>
