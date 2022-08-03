@@ -18,7 +18,7 @@
                 </NuxtLink>
             </div>
             <div class="d-flex flex-column align-center mt-2">
-                <v-btn flat depressed href="https://github.com/uiset-com/resources" target="_blank">提交资源</v-btn>
+                <v-btn flat depressed href="https://github.com/uiset-com/uiset" target="_blank">提交资源</v-btn>
             </div>
         </div>
     </div>
