@@ -18,6 +18,13 @@ export default {
         CategoryMenu,
         CategoryResources
     },
+    setup () {
+        const route = useRoute();
+        const category = categorys.find(item => item.value === route.params.type) || categorys[0];
+        useHead({
+            title: category.name
+        })
+    },
     data() {
         return {
             categorys
