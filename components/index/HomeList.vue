@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="d-flex align-center">
-        <div>共收录<span class="font-weight-bold mx-1">42</span>个优质免费UI资源</div>
+        <div>共收录<span class="font-weight-bold mx-1">{{ summary.total_resources }}</span>个优质免费UI资源</div>
         <v-spacer></v-spacer>
         <v-btn depressed flat href="https://github.com/uiset-com/uiset" target="_blank">
             <v-icon :icon="mdiSourceMerge"></v-icon>提交资源</v-btn>
@@ -23,7 +23,8 @@
 import Icon from '../common/Icon.vue';
 import ResourceCard from './ResourceCard.vue';
 import LatestData from '../../data/latests.json';
-import { mdiSourceMerge } from '@mdi/js'
+import { mdiSourceMerge } from '@mdi/js';
+import summary from '../../data/summary.json';
 export default {
     components: {
         Icon,
@@ -33,7 +34,8 @@ export default {
         return {
             latests: LatestData,
             keywords: '',
-            mdiSourceMerge
+            mdiSourceMerge,
+            summary
         }
     },
     methods: {

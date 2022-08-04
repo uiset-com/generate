@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "algolia:push": "node task/algolia.js",
-    "latest:resources": "node task/get_latest_resources"
+    "latest:resources": "node task/get_latest_resources",
+    "summary": "node task/summary"
   },
   "devDependencies": {
     "@mdi/js": "^7.0.96",

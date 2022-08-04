@@ -34,6 +34,9 @@ jobs:
 
     - name: Get Latest Resources
       run: npm run latest:resources
+
+    - name: Compute Summary
+      run: npm run summary
     
     - name: Generate
       run: npm run generate
