@@ -19,6 +19,10 @@ useHead({
 </script>
 
 <style lang="scss">
+// github markdown style
+@import "@primer/css/color-modes/index.scss";
+@import "@primer/css/base/index.scss";
+@import "@primer/css/markdown/index.scss";
 html {
   overflow: hidden!important;
   font-family: Inter, Menlo, Monaco, Consolas, "Helvetica Neue", Helvetica, "Courier New", 微软雅黑, monospace, Arial, sans-serif, 黑体!important;

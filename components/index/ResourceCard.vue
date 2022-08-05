@@ -1,25 +1,25 @@
 <template>
     <div class="pa-2 resouce-item mr-3 mb-3" :class="'placehold-' + !resource.name">
         <template v-if="resource.name">
-            <a :href="resource.website + '?ref=uiset'" target="_blank">
+            <router-link :to="`/resource/${resource.category}/${resource.value}`">
                 <v-img :src="`/resources/categorys/${resource.category}/${resource.value}/thumbnail.png`" height="180" cover></v-img>
-            </a>
+            </router-link>
             <div class="mt-1">
                 <div class="font-weight-bold">{{ resource.name }}</div>
                 <div class="text-caption summary-box">{{ resource.summary }}</div>
             </div>
             <div class="d-flex align-center mt-2">
-                <v-btn flat color="rgba(0,0,0,0.02)" size="x-small" class="edit-btn" :href="`https://github.com/uiset-com/uiset/tree/master/categorys/${resource.category}/${resource.value}`" target="_blank">
+                <v-btn flat color="rgba(0,0,0,0.02)" size="x-small" class="edit-btn text-decoration-none" :href="`https://github.com/uiset-com/uiset/tree/master/categorys/${resource.category}/${resource.value}`" target="_blank">
                     <v-icon :icon="mdiPencil" size="16" color="#AAA"></v-icon>
                 </v-btn>
                 <v-spacer></v-spacer>
                 
-                <v-btn v-if="resource.github" :href="resource.github" target="_blank" :block="false" flat color="rgba(0,0,0,0.02)" size="x-small" class="mr-1">
+                <v-btn v-if="resource.github" :href="resource.github" target="_blank" :block="false" flat color="rgba(0,0,0,0.02)" size="x-small" class="mr-1 text-decoration-none">
                     <v-icon :icon="mdiGithub" size="18" color="#888"></v-icon>
                     <span class="ml-1 font-weight-bold" style="color: rgba(0,0,0,0.6)">GitHub</span>
                 </v-btn>
                 
-                <v-btn flat color="rgba(0,0,0,0.02)" size="x-small" :href="resource.website + '?ref=uiset'" target="_blank" v-bind="attrs" v-on="on">
+                <v-btn flat color="rgba(0,0,0,0.02)" size="x-small" :href="resource.website + '?ref=uiset'" target="_blank" class="text-decoration-none">
                     <v-icon :icon="mdiWeb" size="16" color="#888"></v-icon>
                     <span class="ml-1 font-weight-bold" style="color: rgba(0,0,0,0.6)">Website</span>
                 </v-btn>
