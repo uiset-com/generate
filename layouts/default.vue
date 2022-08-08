@@ -1,7 +1,9 @@
 <template>
     <v-app>
         <v-app-bar fixed app elevation="0" style="background: #F9F9F9">
-            <Logo></Logo>
+            <nuxt-link to="/">
+                <Logo></Logo>
+            </nuxt-link>
             <div class="ml-6"></div>
             <NuxtLink v-for="item in categories" :key="item.value" :to="'/category/' + item.value" class="text-decoration-none menu-link ml-4">
                 <span>{{ item.name }}</span>

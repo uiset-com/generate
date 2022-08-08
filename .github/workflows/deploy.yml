@@ -32,8 +32,8 @@ jobs:
     - name: Algolia Push
       run: npm run algolia:push
 
-    # - name: Get Latest Resources
-    #   run: npm run latest:resources
+    - name: Get Latest Resources
+      run: npm run latest:resources
 
     # - name: Compute Summary
     #   run: npm run summary

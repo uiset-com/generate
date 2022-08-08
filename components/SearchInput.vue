@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-text-field v-model="keywords" hide-details flat solo dense color="primary" placeholder="搜索资源" class="body-2" background-color="#F5F5F5" :readonly="searching" @keyup.enter="search">
+    <v-text-field v-model="keywords" hide-details flat solo dense color="primary" :placeholder="placeholder" class="body-2" background-color="#F5F5F5" :readonly="searching" @keyup.enter="search">
         <template slot="prepend-inner">
             <v-icon size="20px">{{ $icon.mdiMagnify }}</v-icon>
         </template>
@@ -21,6 +21,12 @@
 
 <script>
 export default {
+    props: {
+        placeholder: {
+            type: String,
+            default: '搜索资源'
+        }
+    },
     data() {
         return {
             keywords: '',
