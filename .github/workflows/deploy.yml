@@ -50,7 +50,7 @@ jobs:
       env:
         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
       with:
-        source-directory: .output/public
+        source-directory: dist
         destination-github-username: 'uiset-com'
         destination-repository-name: 'website'
         user-email: 1246996371@qq.com
