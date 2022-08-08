@@ -1,30 +1,21 @@
 <template>
-    <div class="d-flex" style="max-width: 1100px; width: 100%; margin: 0 auto">
-        <div class="flex-shrink-0">
-            <CategoryMenu></CategoryMenu>
-        </div>
-        <div class="flex-grow-1 ml-7">
-            <div style="height: 100vh" class="d-flex flex-column py-8 pt-3">
-                <ResourceList :resources="results" search-mode :total="total"></ResourceList>
-            </div>
-        </div>
+    <div class="pt-5">
+        <Loading v-if="loading" text="检索中..."></Loading>
+        <div v-else class="d-flex flex-wrap justify-space-around">
+            <ResourceCard v-for="resource in results" :key="resource.value" :resource="resource"></ResourceCard>
+        </div>    
     </div>
 </template>
 
 <script>
-import { searchFromAlgolia } from '../../lib/algolia';
-import CategoryMenu from '../../components/index/CategroyMenu.vue';
-import ResourceList from '~~/components/index/ResourceList.vue';
+import { searchFromAlgolia } from '@/lib/algolia';
 export default {
-    components: {
-        CategoryMenu,
-        ResourceList
-    },
     data() {
         return {
             results: [],
-            total: 0
-        }
+            total: 0,
+            loading: true
+        };
     },
     computed: {
         keywords() {
@@ -37,12 +28,20 @@ export default {
                 this.search();
             },
             immediate: true
+        },
+        loading: {
+            handler() {
+                this.EventBus.$emit('SetSearching', this.loading);
+            },
+            immediate: true
         }
     },
     methods: {
         async search() {
             if (!this.keywords || !this.keywords.trim()) return;
+            this.loading = true;
             let { hits, nbHits } = await searchFromAlgolia(this.keywords.trim());
+            this.loading = false;
             // 补全 3
             const fillup = 3 - (hits.length % 3 || 3);
             if (fillup > 0) {

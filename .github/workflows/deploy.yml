@@ -24,7 +24,7 @@ jobs:
         path: resources
     
     - name: Copy Assets To Public
-      run: rsync -r --exclude '*/**/*.json' --exclude '*/**/*.md' --exclude '.git' ./resources ./public/
+      run: rsync -r --exclude '*/**/*.json' --exclude '*/**/*.md' --exclude '.git' ./resources ./static/
     
     - name: Install npm
       run: npm install
@@ -32,11 +32,14 @@ jobs:
     - name: Algolia Push
       run: npm run algolia:push
 
-    - name: Get Latest Resources
-      run: npm run latest:resources
+    # - name: Get Latest Resources
+    #   run: npm run latest:resources
 
-    - name: Compute Summary
-      run: npm run summary
+    # - name: Compute Summary
+    #   run: npm run summary
+
+    - name: 'Gnerate Content'
+      run: npm run content
     
     - name: Generate
       run: npm run generate

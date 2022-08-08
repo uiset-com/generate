@@ -25,11 +25,6 @@
         "icon": "User"
     },
     {
-        "name": "图形处理",
-        "value": "process",
-        "icon": "Crop"
-    },
-    {
         "name": "截图美化",
         "value": "beatify",
         "icon": "PartyPopper"
