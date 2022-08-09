@@ -9,7 +9,8 @@
     "generate": "nuxt generate",
     "content": "node task/content",
     "latest:resources": "node task/get_latest_resources",
-    "algolia:push": "node task/algolia.js"
+    "algolia:push": "node task/algolia.js",
+    "summary": "node task/summary"
   },
   "dependencies": {
     "@mdi/js": "^7.0.96",
