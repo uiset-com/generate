@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-web",
+  "name": "uiset",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^1.15.1",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vuetify": "^1.12.3"
   }
 }

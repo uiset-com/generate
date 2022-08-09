@@ -89,6 +89,8 @@ sw.*
 # Vim swap files
 *.swp
 
+sw.*
+
 
 resources
 content/categorys
