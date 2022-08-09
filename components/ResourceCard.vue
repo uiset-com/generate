@@ -41,7 +41,7 @@ export default {
     width: 280px;
     position: relative;
     &.placehold-false {
-        border-radius: 2px;
+        border-radius: 4px;
         overflow: hidden;
         // border: #DDD 1px solid;
         background: rgba(0, 0, 0, 0.023);

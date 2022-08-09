@@ -2,6 +2,7 @@
 const { Octokit, App } = require("octokit");
 const fs = require("fs");
 const path = require("path");
+const categorys = require('../data/category.json');
 
 const getLatestResources = async () => {
     const octokit = new Octokit({ auth: process.env.LATEST_GITHUB_KEY });
@@ -17,7 +18,7 @@ const getLatestResources = async () => {
     
     for (let commit of res.data) {
         await getCommit(octokit, commit, latests);
-        if (latests.length >= 3) {
+        if (latests.length >= 4) {
             break;
         }
     }
@@ -25,9 +26,10 @@ const getLatestResources = async () => {
     for (let item of latests) {
         const file = fs.readFileSync(path.resolve(__dirname, '../resources/categorys', item, 'meta.json'), 'utf8');
         const [category, resource] = item.split('/');
+        const categoryItem = categorys.find(c => c.value === category);
         latestJSON.push({
             ...JSON.parse(file),
-            category,
+            category: categoryItem,
             value: resource
         });
     }
@@ -52,7 +54,7 @@ const getCommit = async (octokit, commit, latests) => {
                 latests.push(path);
             }
         }
-        if (latests.length >= 3) {
+        if (latests.length >= 4) {
             return;
         }
     }

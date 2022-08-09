@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-app-bar fixed app elevation="0" style="background: #F9F9F9">
+        <v-app-bar fixed app elevation="0" height="64" style="background: #F9F9F9;">
             <nuxt-link to="/">
                 <Logo></Logo>
             </nuxt-link>
@@ -9,7 +9,9 @@
                 <span>{{ item.name }}</span>
             </NuxtLink>
             <v-spacer></v-spacer>
-            <SearchInput class="mr-3"></SearchInput>
+            <div>
+                <SearchInput class="mr-3"></SearchInput>
+            </div>
             <v-btn depressed href="https://github.com/uiset-com/uiset" target="_blank">
                 <v-icon size="20px">{{ $icon.mdiGithub }}</v-icon>
                 提交资源
@@ -25,15 +27,13 @@
 
 <script>
 import Categories from '../data/category.json';
-import SearchInput from '../components/SearchInput.vue';
 export default {
     name: "DefaultLayout",
     data() {
         return {
             categories: Categories
         };
-    },
-    components: { SearchInput }
+    }
 }
 </script>
 

@@ -3,7 +3,11 @@
         "name": "Color palette generator",
         "summary": "使用机器学习为您的品牌、网站或图形创建独特的配色方案",
         "website": "https://huemint.com/",
-        "category": "color",
+        "category": {
+            "name": "颜色",
+            "value": "color",
+            "icon": "Palette"
+        },
         "value": "color-palette-generator"
     },
     {
@@ -11,14 +15,33 @@
         "summary": "使用全系列 Tailwind CSS 颜色精心挑选的精美 Tailwind CSS 渐变",
         "website": "https://github.com/jordihales/hypercolor/",
         "github": "https://github.com/jordihales/hypercolor",
-        "category": "color",
+        "category": {
+            "name": "颜色",
+            "value": "color",
+            "icon": "Palette"
+        },
         "value": "hypercolor"
     },
     {
         "name": "Basicons",
         "summary": "产品设计和开发的基本图标",
         "website": "https://basicons.xyz/",
-        "category": "icon",
+        "category": {
+            "name": "图标",
+            "value": "icon",
+            "icon": "Flag"
+        },
+        "value": "basicons"
+    },
+    {
+        "name": "Basicons",
+        "summary": "产品设计和开发的基本图标",
+        "website": "https://basicons.xyz/",
+        "category": {
+            "name": "图标",
+            "value": "icon",
+            "icon": "Flag"
+        },
         "value": "basicons"
     }
 ]

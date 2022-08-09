@@ -1,22 +1,20 @@
 <template>
-<div>
-    <v-text-field v-model="keywords" hide-details flat solo dense color="primary" :placeholder="placeholder" class="body-2" background-color="#F5F5F5" :readonly="searching" @keyup.enter="search">
-        <template slot="prepend-inner">
-            <v-icon size="20px">{{ $icon.mdiMagnify }}</v-icon>
-        </template>
+<v-text-field v-model="keywords" hide-details flat solo dense color="primary" :height="height" :placeholder="placeholder" class="body-2" background-color="#F5F5F5" :readonly="searching" @keyup.enter="search">
+    <template slot="prepend-inner">
+        <v-icon size="20px">{{ $icon.mdiMagnify }}</v-icon>
+    </template>
 
-        <template slot="append">
-             <v-progress-circular
-                v-if="searching"
-                indeterminate
-                color="#AAA"
-                size="18"
-                width="3"
-            ></v-progress-circular>
-            <div v-else style="width: 18px"></div>
-        </template>
-    </v-text-field>
-</div>
+    <template slot="append">
+            <v-progress-circular
+            v-if="searching"
+            indeterminate
+            color="#AAA"
+            size="18"
+            width="3"
+        ></v-progress-circular>
+        <div v-else style="width: 18px"></div>
+    </template>
+</v-text-field>
 </template>
 
 <script>
@@ -25,6 +23,10 @@ export default {
         placeholder: {
             type: String,
             default: '搜索资源'
+        },
+        height: {
+            type: [String, Number],
+            default: 30
         }
     },
     data() {
