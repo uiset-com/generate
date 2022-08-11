@@ -17,13 +17,17 @@
                     <div class="mt-2 text-body-2">{{ resource.summary }}</div>
                     <v-spacer></v-spacer>
                     <div class="d-flex align-center">
-                        <v-btn v-if="resource.github" depressed :href="resource.github" target="_blank" :block="false" class="mr-5 text-decoration-none">
-                            <v-icon size="20" color="#888">{{ $icon.mdiGithub }}</v-icon>
+                        <v-btn v-if="resource.license" depressed v-bind="resource.license.url ? { href: resource.license.url } : {}" target="_blank" :block="false" class="text-decoration-none mr-5" style="color: #555">
+                            <LicenseIcon :size="16"></LicenseIcon>
+                            <span v-if="resource.license.name" class="ml-1 font-weight-bold">{{ resource.license.name }}</span>
+                        </v-btn>
+                        <v-btn v-if="resource.github" depressed :href="resource.github" target="_blank" :block="false" class="mr-5 text-decoration-none" style="color: #555">
+                            <v-icon size="20">{{ $icon.mdiGithub }}</v-icon>
                             <span class="ml-1 font-weight-bold">GitHub</span>
                         </v-btn>
                         
-                         <v-btn depressed :href="resource.website + '?ref=uiset'" target="_blank" class="text-decoration-none">
-                            <v-icon size="18" color="#888">{{ $icon.mdiWeb }}</v-icon>
+                         <v-btn depressed :href="resource.website + '?ref=uiset'" target="_blank" class="text-decoration-none" style="color: #555">
+                            <v-icon size="18">{{ $icon.mdiWeb }}</v-icon>
                             <span class="ml-1 font-weight-bold">Website</span>
                         </v-btn>
 

@@ -5,8 +5,14 @@
                 <v-img :src="`/resources/categorys/${resource.category}/${resource.value}/thumbnail.png`" height="201" cover></v-img>
             </router-link>
             <div class="mt-1 pa-2">
-                <div class="font-weight-bold">{{ resource.name }}</div>
-                <div class="body-2 summary-box">{{ resource.summary }}</div>
+                <div>
+                    <span class="font-weight-bold">{{ resource.name }}</span>
+                    <v-btn v-if="resource.license" depressed v-bind="resource.license.url ? { href: resource.license.url } : {}" target="_blank" small :block="false" class="px-1 py-0 ml-1 text-decoration-none caption" color="rgba(0,0,0,0.06)" style="height: 22px; color: rgba(0, 0, 0, 0.6); min-width: 0">
+                        <LicenseIcon :size="14"></LicenseIcon>
+                        <span v-if="resource.license.name" class="ml-1 font-weight-bold">{{ resource.license.name }}</span>
+                    </v-btn>
+                </div>
+                <div class="body-2 summary-box mt-1">{{ resource.summary }}</div>
             </div>
             <div class="d-flex align-center pa-2">
                 <v-spacer></v-spacer>
@@ -26,13 +32,15 @@
 </template>
 
 <script>
+import LicenseIcon from './LicenseIcon.vue';
 export default {
     props: {
         resource: {
             type: Object,
             required: true
         }
-    }
+    },
+    components: { LicenseIcon }
 }
 </script>
 
