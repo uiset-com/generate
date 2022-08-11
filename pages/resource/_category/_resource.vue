@@ -1,9 +1,9 @@
 <template>
-<div>
-    <div v-if="resource" class="flex-grow-1 pb-5 d-flex">
-        <div style="width: 200px" class="flex-shrink-0"></div>
+<div style="max-width: 800px; margin: 0 auto">
+    <div v-if="resource" class="flex-grow-1 py-5">
+        <!-- <div style="width: 200px" class="flex-shrink-0"></div> -->
         <div>
-            <div class="d-flex pl-2 pt-2">
+            <div class="d-flex">
                 <div class="thumbnail-box">
                     <v-img :src="`/resources/categorys/${resource.category}/${resource.value}/thumbnail.png`" width="330px" height="237px" cover></v-img>
                 </div>
@@ -34,7 +34,7 @@
 
             <!-- 关于说明 -->
             <div class="py-5 markdown-body">
-                <!-- <article  v-if="resource.readme" v-html="resource.readme"></article> -->
+                <!-- <article v-if="resource.readme" v-html="resource.readme"></article> -->
                  <nuxt-content v-if="resource.readme" :document="resource.readme" />
 
                 <div v-else class="text-center" style="padding-top: 15vh">
@@ -79,3 +79,32 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+// github markdown style
+// @import "@primer/css/color-modes/index.scss";
+// @import "@primer/css/base/index.scss";
+$spacer: 8px;
+@import "@primer/css/markdown/index.scss";
+
+.markdown-body {
+    --color-canvas-subtle: #f6f8fa;
+    --color-prettylights-syntax-comment: #6e7781;
+    --color-prettylights-syntax-comment: #6e7781;
+    pre {
+        code {
+            background-color: transparent!important;
+        }
+    }
+    code {
+            font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+    }
+    a {
+        color: #0969da!important;
+        text-decoration: none;
+    }
+    .pl-c {
+        color: var(--color-prettylights-syntax-comment);
+    }
+}
+</style>

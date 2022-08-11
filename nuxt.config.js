@@ -81,6 +81,15 @@ export default {
     }
   },
 
+  content: {
+      liveEdit: false,
+      markdown: {
+          prism: {
+              theme: false
+          }
+      }
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
