@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-app-bar fixed app elevation="0" height="64" style="background: #F9F9F9;">
-            <nuxt-link to="/">
+            <nuxt-link to="/" class="d-inline-block" style="height: 20px;">
                 <Logo></Logo>
             </nuxt-link>
             <div class="ml-6 d-none d-md-flex align-center">
@@ -13,9 +13,8 @@
             <div>
                 <SearchInput class="mr-3"></SearchInput>
             </div>
-            <v-btn depressed class="d-none d-sm-block" href="https://github.com/uiset-com/uiset" target="_blank">
-                <v-icon size="20px">{{ $icon.mdiGithub }}</v-icon>
-                提交资源
+            <v-btn depressed class="d-none d-sm-flex" href="https://github.com/uiset-com/uiset" target="_blank">
+                <v-icon size="20px">{{ $icon.mdiGithub }}</v-icon>提交资源
             </v-btn>
         </v-app-bar>
         <v-main>
