@@ -1,13 +1,12 @@
 <template>
 <div style="max-width: 800px; margin: 0 auto">
     <div v-if="resource" class="flex-grow-1 py-5">
-        <!-- <div style="width: 200px" class="flex-shrink-0"></div> -->
         <div>
-            <div class="d-flex">
+            <div class="d-flex flex-column flex-md-row ">
                 <div class="thumbnail-box">
                     <v-img :src="`/resources/categorys/${resource.category}/${resource.value}/thumbnail.png`" width="330px" height="237px" cover></v-img>
                 </div>
-                <div class="ml-3 d-flex flex-column" style="height: 236px">
+                <div class="ml-3 d-flex flex-column mt-3 mt-md-0" :style="this.$vuetify.breakpoint.md ? { height: '236px' } : {}">
                     <div class="text-h6 font-weight-bold">
                         {{ resource.name }}
                         <v-btn :block="false" class="ml-3 d-inline-flex text-decoration-none" depressed x-small :href="`https://github.com/uiset-com/uiset/tree/master/categorys/${resource.category}/${resource.value}`" target="_blank">
@@ -16,7 +15,7 @@
                     </div>
                     <div class="mt-2 text-body-2">{{ resource.summary }}</div>
                     <v-spacer></v-spacer>
-                    <div class="d-flex align-center">
+                    <div class="d-flex align-center mt-5">
                         <v-btn v-if="resource.license" depressed v-bind="resource.license.url ? { href: resource.license.url } : {}" target="_blank" :block="false" class="text-decoration-none mr-5" style="color: #555">
                             <LicenseIcon :size="16"></LicenseIcon>
                             <span v-if="resource.license.name" class="ml-1 font-weight-bold">{{ resource.license.name }}</span>
@@ -80,6 +79,9 @@ export default {
             readme
         }
         this.title = this.resource.name;
+    },
+    created() {
+        console.log('====', this.$vuetify.breakpoint)
     }
 }
 </script>

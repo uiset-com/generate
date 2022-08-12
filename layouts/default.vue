@@ -4,21 +4,23 @@
             <nuxt-link to="/">
                 <Logo></Logo>
             </nuxt-link>
-            <div class="ml-6"></div>
-            <NuxtLink v-for="item in categories" :key="item.value" :to="'/category/' + item.value" class="text-decoration-none menu-link ml-4">
-                <span>{{ item.name }}</span>
-            </NuxtLink>
+            <div class="ml-6 d-none d-md-flex align-center">
+                <NuxtLink v-for="item in categories" :key="item.value" :to="'/category/' + item.value" class="text-decoration-none menu-link ml-4">
+                    <span>{{ item.name }}</span>
+                </NuxtLink>
+            </div>
             <v-spacer></v-spacer>
             <div>
                 <SearchInput class="mr-3"></SearchInput>
             </div>
-            <v-btn depressed href="https://github.com/uiset-com/uiset" target="_blank">
+            <v-btn depressed class="d-none d-sm-block" href="https://github.com/uiset-com/uiset" target="_blank">
                 <v-icon size="20px">{{ $icon.mdiGithub }}</v-icon>
                 提交资源
             </v-btn>
         </v-app-bar>
         <v-main>
             <v-container>
+                <CategoryBar></CategoryBar>
                 <Nuxt />
             </v-container>
         </v-main>
