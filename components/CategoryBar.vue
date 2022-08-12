@@ -1,5 +1,5 @@
 <template>
-    <div class="align-center justify-space-around flex-wrap d-md-none d-sm-flex">
+    <div class="align-center justify-space-around flex-wrap d-flex d-md-none">
         <NuxtLink v-for="item in categories" :key="item.value" :to="'/category/' + item.value" class="text-decoration-none menu-link ml-4 my-2">
             <span>{{ item.name }}</span>
         </NuxtLink>
