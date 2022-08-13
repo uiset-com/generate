@@ -22,7 +22,7 @@ export default {
     },
     async fetch() {
         const path = `categorys/${this.$route.params.category}/meta`;
-        let items = (await this.$content(path).fetch()).map(item => {
+        let items = this.shuffle(await this.$content(path).fetch()).map(item => {
             return {
                 ...item,
                 value: item.slug,
@@ -38,6 +38,15 @@ export default {
         }
         this.resources = items;
         this.title = Categories.find(item => item.value === this.$route.params.category)?.name;
+    },
+    methods: {
+        shuffle(arr) { // 乱序
+            for (let i = arr.length; i; i--) {
+                let j = Math.floor(Math.random() * i);
+                [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
+            }
+            return arr;
+        }
     }
 }
 </script>
