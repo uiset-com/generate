@@ -27,6 +27,10 @@ export default {
             src: 'https://hm.baidu.com/hm.js?11315abcea3a0ef1fd34d1b3d74d9b1d',
             async: true,
             defer: true
+        },
+        {
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9906622596531689',
+            async: true
         }
     ]
   },
