@@ -1,7 +1,13 @@
 <template>
     <div class="pt-5">
         <div class="d-flex flex-wrap justify-space-around">
-            <ResourceCard v-for="resource in resources" :key="resource.value" :resource="resource"></ResourceCard>
+            
+            <template v-for="(resource, index) in resources">
+                <div v-if="resource.ad" :key="index" style="width: 300px; height: 360px;">
+                    <Adsense></Adsense>
+                </div>
+                <ResourceCard v-else :key="resource.value" :resource="resource"></ResourceCard>
+            </template>
         </div>    
     </div>
 </template>
@@ -29,6 +35,13 @@ export default {
                 category: this.$route.params.category
             }
         });
+        // 插入广告
+        if (items.length > 7) {
+            items.splice(6, 0, {
+                ad: true
+            });
+        }
+
         const fillup = 3 - (items.length % 3 || 3);
         if (fillup > 0) {
             items = [
