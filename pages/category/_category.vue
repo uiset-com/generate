@@ -3,7 +3,7 @@
         <div class="d-flex flex-wrap justify-space-around">
             
             <template v-for="(resource, index) in resources">
-                <div v-if="resource.ad" :key="index" style="width: 300px; height: 360px;">
+                <div v-if="resource.ad" :key="index" style="width: 300px; height: 360px;" class="ml-8 mb-8">
                     <Adsense></Adsense>
                 </div>
                 <ResourceCard v-else :key="resource.value" :resource="resource"></ResourceCard>
@@ -35,9 +35,10 @@ export default {
                 category: this.$route.params.category
             }
         });
-        // 插入广告
+        // 插入广告  在大于等于6之后
         if (items.length > 7) {
-            items.splice(6, 0, {
+            const index = 6 + parseInt(Math.random() * (items.length - 6));
+            items.splice(index, 0, {
                 ad: true
             });
         }
