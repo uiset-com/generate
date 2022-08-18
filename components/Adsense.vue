@@ -17,11 +17,11 @@ export default {
         );
         adscript.setAttribute('async', true);
         adscript.setAttribute('crossorigin', 'anonymous');
-        adscript.addEventListener('load', () => {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        });
+        // adscript.addEventListener('load', () => {
+        //     (adsbygoogle = window.adsbygoogle || []).push({});
+        // });
         this.$refs.adbox.appendChild(adscript);
-        
-    },
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }
 }
 </script>
