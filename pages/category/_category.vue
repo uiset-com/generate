@@ -3,7 +3,7 @@
         <div class="d-flex flex-wrap justify-space-around">
             
             <template v-for="(resource, index) in resources">
-                <div v-if="resource.ad" :key="index" style="width: 300px; height: 360px;" class="ml-8 mb-8">
+                <div v-if="resource.ad" :key="index" style="width: 280px; height: 360px;" class="ml-8 mb-8">
                     <Adsense></Adsense>
                 </div>
                 <ResourceCard v-else :key="resource.value" :resource="resource"></ResourceCard>
