@@ -1,37 +1,34 @@
 [
     {
         "name": "插图",
-        "value": "illustration",
-        "icon": "Airplay"
+        "value": "illustration"
     },
     {
         "name": "图标",
-        "value": "icon",
-        "icon": "Flag"
+        "value": "icon"
     },
     {
         "name": "颜色",
-        "value": "color",
-        "icon": "Palette"
+        "value": "color"
     },
     {
         "name": "图案",
-        "value": "pattern",
-        "icon": "Hexagon"
+        "value": "pattern"
     },
     {
         "name": "头像",
-        "value": "avatar",
-        "icon": "User"
+        "value": "avatar"
     },
     {
-        "name": "表情",
-        "value": "emoji",
-        "icon": "emoji"
+        "name": "图片",
+        "value": "image"
     },
     {
         "name": "美化",
-        "value": "beatify",
-        "icon": "PartyPopper"
+        "value": "beatify"
+    },
+    {
+        "name": "美化",
+        "value": "beatify"
     }
 ]
