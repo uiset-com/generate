@@ -20,12 +20,13 @@
         "value": "avatar"
     },
     {
-        "name": "图片",
-        "value": "image"
+        "name": "表情",
+        "value": "emoji",
+        "icon": "emoji"
     },
     {
-        "name": "美化",
-        "value": "beatify"
+        "name": "图片",
+        "value": "image"
     },
     {
         "name": "美化",
